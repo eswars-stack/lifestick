@@ -99,6 +99,18 @@ const concepts = [
       { q: "You're new to AI and feeling nervous about using it. The best first step is:", options: ["Study everything about AI before trying", "Ask a family member to use it for you", "Type one simple question — anything you're curious about — and see what happens", "Wait until you feel more confident"], answer: 2, explain: "The only way to get comfortable is to start. One question. That's all. You cannot break it, you cannot say the wrong thing, and it will not judge you. Just start." },
       { q: "After one week of using AI daily, you'll probably feel:", options: ["Still completely lost", "More comfortable and able to think of more ways it can help you", "Like an AI expert", "Bored of it"], answer: 1, explain: "Like WhatsApp, AI gets easier and more useful the more you use it. After a week of small daily questions, most people feel comfortable and start discovering uses they hadn't thought of." }
     ]
+  },
+  {
+    id: "s9", title: "Free AI Tools You Can Use Today", subtitle: "Four apps — all free, all in plain English",
+    emoji: "🛠️", duration: "3 min",
+    analogy: "Free AI tools are like different shops on the same street. They all sell similar things — help with questions, writing, recipes, and ideas — but each has a slightly different speciality. WhatsApp AI is the shop you already walk past every day. ChatGPT is the big well-known store everyone mentions. Gemini is connected to your Google account. Claude is particularly good at reading long confusing documents. You don't need to choose just one — use whichever is easiest to reach.",
+    explanation: `There are four excellent free AI tools available right now:\n\n💬 WhatsApp Meta AI — Already inside WhatsApp. Tap the ✨ sparkle icon at the top of your chats, or type @Meta AI in any chat. No sign-up, no new app — you already have it.\n\n🤖 ChatGPT — The most well-known. Search for "ChatGPT" in your app store, download it free, and create a free account with your email.\n\n✨ Google Gemini — Uses your Gmail account. Download the Gemini app or go to gemini.google.com and sign in with your Google account.\n\n🧠 Claude — Especially good at reading long documents like letters or forms. Download the free Claude app and sign in with your email.\n\nAll four understand plain, everyday language. None require technical knowledge.`,
+    realWorld: `A few everyday situations and which tool fits:\n\n"I'm already in WhatsApp and have a quick question" → type @Meta AI right there in the chat. No need to open anything else.\n\n"I've received a confusing letter from my bank or doctor" → open Claude, paste the letter, ask: 'What is this saying and what do I need to do?'\n\n"I want to use the one everyone talks about" → open ChatGPT.\n\n"I use Gmail and want something familiar" → open Gemini with your existing Google account.\n\nYou can try all four — they are all free. Most people settle on one or two they like and use those.`,
+    sticky: `"All four tools are free, all understand plain English, and none require technical knowledge. The quickest to start with? WhatsApp Meta AI — if you use WhatsApp, you already have it. No download, no sign-up. Just tap ✨ and ask."`,
+    quiz: [
+      { q: "You are in WhatsApp and want to quickly ask AI for a recipe idea. What is the easiest thing to do?", options: ["Close WhatsApp and download a new AI app", "Call a family member to ask instead", "Type @Meta AI in any WhatsApp chat and ask your question", "Open a browser and go to a website"], answer: 2, explain: "WhatsApp Meta AI is already built in — no need to leave WhatsApp at all. Type @Meta AI in any chat and ask anything, just as you would send a normal message." },
+      { q: "You have a long, confusing letter from your insurance company. Which tool is best known for reading and explaining long documents?", options: ["WhatsApp Meta AI", "Claude", "Google Gemini", "ChatGPT"], answer: 1, explain: "Claude is especially good at reading and understanding long or complicated text. Paste the letter and ask 'What is this saying and what do I need to do?' — it will explain it clearly in plain English." }
+    ]
   }
 ];
 
@@ -382,6 +394,7 @@ function HomeView({ completed, streak, onOpen }) {
           })}
         </div>
       </div>
+
     </div>
   );
 }
