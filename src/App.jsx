@@ -213,12 +213,11 @@ export default function LifeStick() {
       background: t.bg,
       color: t.text,
       fontFamily: "'DM Sans', system-ui, sans-serif",
-      fontSize: 24,
+      fontSize: 16,
       maxWidth: 500,
       margin: "0 auto",
     }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,700;1,600&display=swap');
         * { box-sizing: border-box; margin: 0; padding: 0; }
         ::-webkit-scrollbar { display: none; }
         .fadein { animation: fi 0.3s ease forwards; }
@@ -278,19 +277,19 @@ function HomeView({ completed, streak, onOpen }) {
       <div style={{ padding: "52px 22px 22px", background: t.headerGrad }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 20 }}>
           <div>
-            <div style={{ fontSize: 17, letterSpacing: 3, color: t.accentSoft, fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>LifeStick</div>
-            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 42, fontWeight: 700, lineHeight: 1.2, color: t.text, marginBottom: 4 }}>
+            <div style={{ fontSize: 11, letterSpacing: 3, color: t.accentSoft, fontWeight: 700, textTransform: "uppercase", marginBottom: 8 }}>LifeStick</div>
+            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, fontWeight: 700, lineHeight: 1.2, color: t.text, marginBottom: 4 }}>
               AI for everyday life
             </h1>
-            <p style={{ fontSize: 21, color: t.textMid, lineHeight: 1.5 }}>
+            <p style={{ fontSize: 14, color: t.textMid, lineHeight: 1.5 }}>
               Simple lessons. No jargon. At your own pace.
             </p>
           </div>
           {streak > 0 && (
             <div style={{ background: t.gradient, borderRadius: 16, padding: "10px 14px", textAlign: "center", minWidth: 58, flexShrink: 0, marginLeft: 16 }}>
-              <div style={{ fontSize: 33 }}>🔥</div>
-              <div style={{ fontSize: 23, fontWeight: 700, color: "#fff" }}>{streak}</div>
-              <div style={{ fontSize: 14, color: "rgba(255,255,255,0.75)", letterSpacing: 1, textTransform: "uppercase" }}>days</div>
+              <div style={{ fontSize: 22 }}>🔥</div>
+              <div style={{ fontSize: 15, fontWeight: 700, color: "#fff" }}>{streak}</div>
+              <div style={{ fontSize: 9, color: "rgba(255,255,255,0.75)", letterSpacing: 1, textTransform: "uppercase" }}>days</div>
             </div>
           )}
         </div>
@@ -298,14 +297,14 @@ function HomeView({ completed, streak, onOpen }) {
         {/* Progress bar */}
         <div style={{ background: t.surface, borderRadius: 14, padding: "16px 18px" }}>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
-            <span style={{ fontSize: 21, color: t.textMid }}>
+            <span style={{ fontSize: 14, color: t.textMid }}>
               {completed.length === 0
                 ? "Ready to start your journey"
                 : completed.length === concepts.length
                   ? "All lessons complete! Well done 🌸"
                   : `${completed.length} of ${concepts.length} lessons done`}
             </span>
-            <span style={{ fontSize: 21, color: t.accentSoft, fontWeight: 600 }}>{pct}%</span>
+            <span style={{ fontSize: 14, color: t.accentSoft, fontWeight: 600 }}>{pct}%</span>
           </div>
           <div style={{ height: 6, background: t.border, borderRadius: 99, overflow: "hidden" }}>
             <div style={{ height: "100%", width: `${pct}%`, background: t.gradient, borderRadius: 99, transition: "width 0.6s ease" }} />
@@ -315,7 +314,7 @@ function HomeView({ completed, streak, onOpen }) {
 
       {/* Up Next */}
       <div style={{ padding: "8px 18px 26px" }}>
-        <div style={{ fontSize: 17, letterSpacing: 2.5, color: t.accentSoft, fontWeight: 700, textTransform: "uppercase", marginBottom: 14, paddingLeft: 2 }}>
+        <div style={{ fontSize: 11, letterSpacing: 2.5, color: t.accentSoft, fontWeight: 700, textTransform: "uppercase", marginBottom: 14, paddingLeft: 2 }}>
           {completed.length === 0 ? "Start here" : "Continue here"}
         </div>
         <div
@@ -331,28 +330,28 @@ function HomeView({ completed, streak, onOpen }) {
             overflow: "hidden",
           }}
         >
-          <div style={{ position: "absolute", top: -28, right: -28, fontSize: 180, opacity: 0.07 }}>{next.emoji}</div>
-          <div style={{ fontSize: 17, letterSpacing: 2, color: t.accentSoft, fontWeight: 600, textTransform: "uppercase", marginBottom: 6 }}>{next.duration}</div>
-          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 39, fontWeight: 700, color: t.text, marginBottom: 6 }}>{next.title}</h2>
-          <p style={{ fontSize: 23, color: t.textMid, marginBottom: 20, lineHeight: 1.5 }}>{next.subtitle}</p>
+          <div style={{ position: "absolute", top: -28, right: -28, fontSize: 120, opacity: 0.07 }}>{next.emoji}</div>
+          <div style={{ fontSize: 11, letterSpacing: 2, color: t.accentSoft, fontWeight: 600, textTransform: "uppercase", marginBottom: 6 }}>{next.duration}</div>
+          <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, fontWeight: 700, color: t.text, marginBottom: 6 }}>{next.title}</h2>
+          <p style={{ fontSize: 15, color: t.textMid, marginBottom: 20, lineHeight: 1.5 }}>{next.subtitle}</p>
           <div style={{ background: "rgba(0,0,0,0.25)", borderRadius: 12, padding: "14px 16px", marginBottom: 20 }}>
-            <div style={{ fontSize: 15, color: t.accentSoft, letterSpacing: 1.5, marginBottom: 6, textTransform: "uppercase", fontWeight: 600 }}>A simple way to think about it</div>
-            <p style={{ fontSize: 23, color: t.text, lineHeight: 1.65 }}>{next.analogy}</p>
+            <div style={{ fontSize: 10, color: t.accentSoft, letterSpacing: 1.5, marginBottom: 6, textTransform: "uppercase", fontWeight: 600 }}>A simple way to think about it</div>
+            <p style={{ fontSize: 15, color: t.text, lineHeight: 1.65 }}>{next.analogy}</p>
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ display: "flex", gap: 6 }}>
               {["💡", "📖", "🌱", "⭐"].map((e, i) => (
-                <div key={i} style={{ width: 32, height: 32, background: "rgba(0,0,0,0.3)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 21 }}>{e}</div>
+                <div key={i} style={{ width: 32, height: 32, background: "rgba(0,0,0,0.3)", borderRadius: 8, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 14 }}>{e}</div>
               ))}
             </div>
-            <div style={{ background: t.gradient, color: "#fff", fontWeight: 700, fontSize: 23, padding: "12px 22px", borderRadius: 99 }}>Begin →</div>
+            <div style={{ background: t.gradient, color: "#fff", fontWeight: 700, fontSize: 15, padding: "12px 22px", borderRadius: 99 }}>Begin →</div>
           </div>
         </div>
       </div>
 
       {/* All lessons list */}
       <div style={{ padding: "0 18px" }}>
-        <div style={{ fontSize: 17, letterSpacing: 2.5, color: t.accentSoft, fontWeight: 700, textTransform: "uppercase", marginBottom: 14, paddingLeft: 2 }}>All lessons</div>
+        <div style={{ fontSize: 11, letterSpacing: 2.5, color: t.accentSoft, fontWeight: 700, textTransform: "uppercase", marginBottom: 14, paddingLeft: 2 }}>All lessons</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {concepts.map(c => {
             const done = completed.includes(c.id);
@@ -372,12 +371,12 @@ function HomeView({ completed, streak, onOpen }) {
                   gap: 16,
                 }}
               >
-                <div style={{ fontSize: 45 }}>{c.emoji}</div>
+                <div style={{ fontSize: 30 }}>{c.emoji}</div>
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontWeight: 600, fontSize: 24, color: done ? t.accentSoft : t.text }}>{c.title}</div>
-                  <div style={{ fontSize: 20, color: t.textDim, marginTop: 3 }}>{c.subtitle}</div>
+                  <div style={{ fontWeight: 600, fontSize: 16, color: done ? t.accentSoft : t.text }}>{c.title}</div>
+                  <div style={{ fontSize: 13, color: t.textDim, marginTop: 3 }}>{c.subtitle}</div>
                 </div>
-                <div style={{ fontSize: 27 }}>{done ? "✅" : "▶️"}</div>
+                <div style={{ fontSize: 18 }}>{done ? "✅" : "▶️"}</div>
               </div>
             );
           })}
@@ -407,16 +406,16 @@ function LearnView({ concept, phase, isAnimating, onNext, onBack }) {
           onClick={onBack}
           style={{
             background: t.surface, border: "none", color: t.accentSoft,
-            fontSize: 30, cursor: "pointer", borderRadius: 12,
+            fontSize: 20, cursor: "pointer", borderRadius: 12,
             width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center",
           }}
         >←</button>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 17, color: t.accentSoft, letterSpacing: 2, textTransform: "uppercase", fontWeight: 600 }}>
+          <div style={{ fontSize: 11, color: t.accentSoft, letterSpacing: 2, textTransform: "uppercase", fontWeight: 600 }}>
             {concept.emoji} {concept.title}
           </div>
         </div>
-        <div style={{ fontSize: 20, color: t.textDim, fontWeight: 600 }}>{phaseIdx + 1} / {phases.length}</div>
+        <div style={{ fontSize: 13, color: t.textDim, fontWeight: 600 }}>{phaseIdx + 1} / {phases.length}</div>
       </div>
 
       {/* Progress steps */}
@@ -442,12 +441,12 @@ function LearnView({ concept, phase, isAnimating, onNext, onBack }) {
             overflow: "hidden",
           }}
         >
-          <div style={{ position: "absolute", top: -30, right: -30, fontSize: 240, opacity: 0.04 }}>{concept.emoji}</div>
+          <div style={{ position: "absolute", top: -30, right: -30, fontSize: 160, opacity: 0.04 }}>{concept.emoji}</div>
 
           {/* Phase label */}
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 24 }}>
-            <span style={{ fontSize: 42 }}>{phaseIcons[phase]}</span>
-            <div style={{ fontSize: 18, letterSpacing: 1.5, color: t.accentSoft, textTransform: "uppercase", fontWeight: 700 }}>
+            <span style={{ fontSize: 28 }}>{phaseIcons[phase]}</span>
+            <div style={{ fontSize: 12, letterSpacing: 1.5, color: t.accentSoft, textTransform: "uppercase", fontWeight: 700 }}>
               {phaseLabels[phase]}
             </div>
           </div>
@@ -456,10 +455,10 @@ function LearnView({ concept, phase, isAnimating, onNext, onBack }) {
           {phase === "sticky" ? (
             <div style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center" }}>
               <div style={{ background: t.pill, border: `1px solid ${t.accent}`, borderRadius: 20, padding: "30px 24px", textAlign: "center" }}>
-                <div style={{ fontSize: 60, marginBottom: 18 }}>🧠</div>
+                <div style={{ fontSize: 40, marginBottom: 18 }}>🧠</div>
                 <p style={{
                   fontFamily: "'Playfair Display', serif",
-                  fontSize: 30,
+                  fontSize: 20,
                   color: t.text,
                   lineHeight: 1.55,
                   fontStyle: "italic",
@@ -467,7 +466,7 @@ function LearnView({ concept, phase, isAnimating, onNext, onBack }) {
               </div>
             </div>
           ) : (
-            <p style={{ fontSize: 24, color: t.textMid, lineHeight: 1.8, whiteSpace: "pre-line", flex: 1 }}>{content}</p>
+            <p style={{ fontSize: 16, color: t.textMid, lineHeight: 1.8, whiteSpace: "pre-line", flex: 1 }}>{content}</p>
           )}
         </div>
       </div>
@@ -483,7 +482,7 @@ function LearnView({ concept, phase, isAnimating, onNext, onBack }) {
             border: isLast ? "none" : `1px solid ${t.border}`,
             color: isLast ? "#fff" : t.accentSoft,
             fontWeight: 700,
-            fontSize: 26,
+            fontSize: 17,
             padding: "20px",
             borderRadius: 18,
             cursor: "pointer",
@@ -511,16 +510,16 @@ function QuizView({ concept, state, onSelect, onNext, onBack }) {
           onClick={onBack}
           style={{
             background: t.surface, border: "none", color: t.accentSoft,
-            fontSize: 30, cursor: "pointer", borderRadius: 12,
+            fontSize: 20, cursor: "pointer", borderRadius: 12,
             width: 44, height: 44, display: "flex", alignItems: "center", justifyContent: "center",
           }}
         >←</button>
         <div style={{ flex: 1 }}>
-          <div style={{ fontSize: 17, color: t.accentSoft, letterSpacing: 2, textTransform: "uppercase", fontWeight: 600 }}>
+          <div style={{ fontSize: 11, color: t.accentSoft, letterSpacing: 2, textTransform: "uppercase", fontWeight: 600 }}>
             Quick check · {concept.title}
           </div>
         </div>
-        <div style={{ fontSize: 20, color: t.textDim, fontWeight: 600 }}>
+        <div style={{ fontSize: 13, color: t.textDim, fontWeight: 600 }}>
           {current + 1} of {concept.quiz.length}
         </div>
       </div>
@@ -528,7 +527,7 @@ function QuizView({ concept, state, onSelect, onNext, onBack }) {
       <div style={{ flex: 1, padding: "0 18px" }}>
         {/* Question */}
         <div className="fadein" style={{ background: t.surface, border: `1px solid ${t.border}`, borderRadius: 24, padding: "28px 22px", marginBottom: 16 }}>
-          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 32, color: t.text, lineHeight: 1.45 }}>{q.q}</p>
+          <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 21, color: t.text, lineHeight: 1.45 }}>{q.q}</p>
         </div>
 
         {/* Answer options */}
@@ -563,13 +562,13 @@ function QuizView({ concept, state, onSelect, onNext, onBack }) {
                   background: border === t.border ? t.border : border + "33",
                   border: `1px solid ${border}`,
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 18, fontWeight: 700, color, marginTop: 1, flexShrink: 0,
+                  fontSize: 12, fontWeight: 700, color, marginTop: 1, flexShrink: 0,
                 }}>
                   {showExplain
                     ? (i === q.answer ? "✓" : i === selected ? "✗" : String.fromCharCode(65 + i))
                     : String.fromCharCode(65 + i)}
                 </div>
-                <span style={{ fontSize: 24, color, lineHeight: 1.55 }}>{opt}</span>
+                <span style={{ fontSize: 16, color, lineHeight: 1.55 }}>{opt}</span>
               </div>
             );
           })}
@@ -582,10 +581,10 @@ function QuizView({ concept, state, onSelect, onNext, onBack }) {
             border: `1px solid ${isCorrect ? t.accent : "#ef4444"}`,
             borderRadius: 16, padding: "18px", marginTop: 16,
           }}>
-            <div style={{ fontWeight: 700, color: isCorrect ? t.accentSoft : "#f87171", marginBottom: 8, fontSize: 24 }}>
+            <div style={{ fontWeight: 700, color: isCorrect ? t.accentSoft : "#f87171", marginBottom: 8, fontSize: 16 }}>
               {isCorrect ? "✓ That's right!" : "✗ Not quite — and that's okay!"}
             </div>
-            <p style={{ fontSize: 23, color: isCorrect ? t.textMid : "#fecaca", lineHeight: 1.65 }}>{q.explain}</p>
+            <p style={{ fontSize: 15, color: isCorrect ? t.textMid : "#fecaca", lineHeight: 1.65 }}>{q.explain}</p>
           </div>
         )}
       </div>
@@ -597,7 +596,7 @@ function QuizView({ concept, state, onSelect, onNext, onBack }) {
             className="tap"
             style={{
               width: "100%", background: t.gradient, border: "none",
-              color: "#fff", fontWeight: 700, fontSize: 26,
+              color: "#fff", fontWeight: 700, fontSize: 17,
               padding: "20px", borderRadius: 18, cursor: "pointer",
             }}
           >
@@ -615,11 +614,11 @@ function ResultsView({ concept, score, total, onHome, onNextConcept, onRetry }) 
   const perfect = score === total;
   return (
     <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "48px 26px", textAlign: "center" }}>
-      <div style={{ fontSize: 120, marginBottom: 18 }}>{perfect ? "🌸" : score >= total / 2 ? "🎯" : "📚"}</div>
-      <div style={{ fontSize: 17, letterSpacing: 3, color: t.accentSoft, textTransform: "uppercase", marginBottom: 8, fontWeight: 700 }}>Lesson complete</div>
-      <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 42, color: t.text, marginBottom: 8 }}>{concept.title}</h2>
-      <div style={{ fontSize: 84, fontWeight: 700, color: perfect ? t.accent : t.text, margin: "16px 0" }}>{score}/{total}</div>
-      <p style={{ fontSize: 24, color: t.textMid, maxWidth: 280, lineHeight: 1.65, marginBottom: 28 }}>
+      <div style={{ fontSize: 80, marginBottom: 18 }}>{perfect ? "🌸" : score >= total / 2 ? "🎯" : "📚"}</div>
+      <div style={{ fontSize: 11, letterSpacing: 3, color: t.accentSoft, textTransform: "uppercase", marginBottom: 8, fontWeight: 700 }}>Lesson complete</div>
+      <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: 28, color: t.text, marginBottom: 8 }}>{concept.title}</h2>
+      <div style={{ fontSize: 56, fontWeight: 700, color: perfect ? t.accent : t.text, margin: "16px 0" }}>{score}/{total}</div>
+      <p style={{ fontSize: 16, color: t.textMid, maxWidth: 280, lineHeight: 1.65, marginBottom: 28 }}>
         {perfect
           ? "Wonderful! You've got this one. 🌸"
           : score > 0
@@ -629,8 +628,8 @@ function ResultsView({ concept, score, total, onHome, onNextConcept, onRetry }) 
 
       {/* Sticky takeaway */}
       <div style={{ background: t.surface, border: `1px solid ${t.border}`, borderRadius: 18, padding: "22px", width: "100%", marginBottom: 24, textAlign: "left" }}>
-        <div style={{ fontSize: 15, color: t.accentSoft, letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 10, fontWeight: 700 }}>Remember this</div>
-        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 26, color: t.text, lineHeight: 1.55, fontStyle: "italic" }}>{concept.sticky}</p>
+        <div style={{ fontSize: 10, color: t.accentSoft, letterSpacing: 2.5, textTransform: "uppercase", marginBottom: 10, fontWeight: 700 }}>Remember this</div>
+        <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 17, color: t.text, lineHeight: 1.55, fontStyle: "italic" }}>{concept.sticky}</p>
       </div>
 
       {/* Action buttons */}
@@ -640,7 +639,7 @@ function ResultsView({ concept, score, total, onHome, onNextConcept, onRetry }) 
           className="tap"
           style={{
             background: t.gradient, border: "none", color: "#fff",
-            fontWeight: 700, fontSize: 26, padding: "20px", borderRadius: 18, cursor: "pointer",
+            fontWeight: 700, fontSize: 17, padding: "20px", borderRadius: 18, cursor: "pointer",
           }}
         >
           Next lesson →
@@ -650,7 +649,7 @@ function ResultsView({ concept, score, total, onHome, onNextConcept, onRetry }) 
           className="tap"
           style={{
             background: t.surface, border: `1px solid ${t.border}`, color: t.accentSoft,
-            fontWeight: 600, fontSize: 24, padding: "18px", borderRadius: 18, cursor: "pointer",
+            fontWeight: 600, fontSize: 16, padding: "18px", borderRadius: 18, cursor: "pointer",
           }}
         >
           Back to all lessons
@@ -660,7 +659,7 @@ function ResultsView({ concept, score, total, onHome, onNextConcept, onRetry }) 
           className="tap"
           style={{
             background: "none", border: "none", color: t.textDim,
-            fontSize: 21, cursor: "pointer", padding: "8px",
+            fontSize: 14, cursor: "pointer", padding: "8px",
           }}
         >
           Try the quiz again
